@@ -1,0 +1,313 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	background-color:#000000;
+	overflow:hidden;	
+}
+#canvas {
+	position:absolute;
+	background:#C7C7C7;
+	display: block;
+	top:100px;
+	width:100%;
+	height:100%;
+	left:0px;
+	z-index:-2;
+}
+#ContactCanvas {
+	position:absolute;
+	background-color:#666;
+	display: block;
+	top:150px;
+	z-index:5;/**FOR NOW**/
+}
+#MainMenu
+{
+	top: 0px;
+	left: 0px;
+	height:100px;
+	width:100%;
+	position:absolute;	
+	z-index: 15;
+	
+}
+.MainMenuIcon
+{
+	cursor: pointer;
+	background:#CCC;
+	z-index:5;	
+}
+#HomeIconId
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}	
+#MusicIconId
+{
+	position: absolute;
+	left: 100px;
+	top: 0px;
+}
+#ProjectsIconId
+{
+	position: absolute;
+	left: 200px;
+	top: 0px;
+}		
+#ContactIconId
+{
+	position: absolute;
+	left: 300px;
+	top: 0px;
+}		
+.page 
+{
+	position: absolute;
+	height: 612px;
+	width: 100%;
+	z-index: -1;
+}
+
+/******	
+	HOME
+	********/
+.TextHome
+{
+	position:absolute; 
+	background:#000;
+	top:50%; 
+	left:50%;
+	color:#BEEFED;
+	font-family:Tahoma, Geneva, sans-serif;
+	 margin-left:-200px;
+	  text-align:center;
+}
+/******	
+	MUSIC
+	********/
+#Guitar
+{
+	/*cursor:pointer;	*/
+}
+#VideoSelect
+{
+	position:absolute;	
+	top:329px;
+	left:117px;
+	opacity:0;
+}
+#VideoActivator
+{
+	position:absolute;
+	top:329px;
+	left:117px;
+	opacity:0;
+	z-index:2;
+	cursor:pointer;
+}
+#MusicSelect
+{
+	position:absolute;	
+	top:381px;
+	left:145px;
+	opacity:0;
+}
+#MusicActivator
+{
+	position:absolute;
+	top:381px;
+	left:145px;
+	opacity:0;
+	z-index:2;
+	cursor:pointer;
+}
+
+/*******
+	 CONTACT 
+		********/
+#Contact
+{
+	/*border: 10px groove #666;*/
+	height:800px;
+	width:1400px;	
+
+}
+#ContactBackground
+{
+	position:relative;
+	height:800px;
+	width:1400px;
+	z-index:-1;
+}
+#MainPlanet
+{
+	position:absolute;
+	left:50%;	
+	top:50%;
+	margin-left:-30px;
+	margin-top:-30px;
+}
+#ReverbNationPlanet
+{
+	position: inherit;
+	cursor: pointer;
+	top: 10%;
+	left: 10%;
+}
+#GooglePlanet
+{
+	position:absolute;
+	cursor: pointer;
+	left:50%;
+	top:50%;
+	margin-left:-20px;
+	margin-top:-20px;
+	-webkit-animation: myOrbit2 15s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit2 15s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit2 15s linear infinite; /* Opera 12+ */
+            animation: myOrbit2 15s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+}
+#FacebookPlanet
+{
+	cursor:pointer;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-15px;
+	margin-top:-15px;
+	-webkit-animation: myOrbit 12s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit 12s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit 12s linear infinite; /* Opera 12+ */
+            animation: myOrbit 12s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+}
+#ReverbNationPlanet
+{
+	cursor:pointer;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-15px;
+	margin-top:-15px;
+	-webkit-animation: myOrbit3 35s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit3 35s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit3 35s linear infinite; /* Opera 12+ */
+            animation: myOrbit3 35s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+}
+#LinkedInPlanet
+{
+	cursor:pointer;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-17.5px;
+	margin-top:-17.5px;
+	-webkit-animation: myOrbit4 24s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit4 24s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit4 24s linear infinite; /* Opera 12+ */
+            animation: myOrbit4 24s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+}
+#GithubPlanet
+{
+	cursor:pointer;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-20px;
+	margin-top:-20px;
+	-webkit-animation: myOrbit5 30s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit5 30s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit5 30s linear infinite; /* Opera 12+ */
+            animation: myOrbit5 30s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+}
+/**ORBIT1**/
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(100px) rotate(0deg); cursor:pointer;}
+	to   { -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg); cursor:pointer;}
+}
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(100px) rotate(0deg); cursor:pointer; }
+    to   { -o-transform: rotate(360deg) translateX(100px) rotate(-360deg); cursor:pointer; }
+}
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); cursor:pointer;}
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); cursor:pointer;}
+}
+/** ORBIT 2 **/
+@-webkit-keyframes myOrbit2 {
+    from { -webkit-transform: rotate(0deg) translateX(-150px) rotate(0deg); cursor:pointer;}
+	to   { -webkit-transform: rotate(360deg) translateX(-150px) rotate(-360deg); cursor:pointer;}
+}
+@-moz-keyframes myOrbit2 {
+    from { -moz-transform: rotate(0deg) translateX(-150px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(-150px) rotate(-360deg); }
+}
+@-o-keyframes myOrbit2 {
+    from { -o-transform: rotate(0deg) translateX(-150px) rotate(0deg); cursor:pointer; }
+    to   { -o-transform: rotate(360deg) translateX(-150px) rotate(-360deg); cursor:pointer; }
+}
+@keyframes myOrbit2 {
+    from { transform: rotate(0deg) translateX(-150px) rotate(0deg); cursor:pointer;}
+    to   { transform: rotate(360deg) translateX(-150px) rotate(-360deg); cursor:pointer;}
+}
+/** ORBIT 3 **/
+@-webkit-keyframes myOrbit3 {
+    from { -webkit-transform: rotate(0deg) translateY(-300px) rotate(0deg); cursor:pointer;}
+	to   { -webkit-transform: rotate(360deg) translateY(-300px) rotate(-360deg); cursor:pointer;}
+}
+@-moz-keyframes myOrbit3 {
+    from { -moz-transform: rotate(0deg) translateY(-300px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateY(-300px) rotate(-360deg); }
+}
+@-o-keyframes myOrbit3 {
+    from { -o-transform: rotate(0deg) translateY(-300px) rotate(0deg); cursor:pointer; }
+    to   { -o-transform: rotate(360deg) translateY(-300px) rotate(-360deg); cursor:pointer; }
+}
+@keyframes myOrbit3 {
+    from { transform: rotate(0deg) translateY(-300px) rotate(0deg); cursor:pointer;}
+    to   { transform: rotate(360deg) translateY(-300px) rotate(-360deg); cursor:pointer;}
+}
+/** ORBIT 4 **/
+@-webkit-keyframes myOrbit4 {
+    from { -webkit-transform: rotate(0deg) translateY(200px) rotate(0deg); cursor:pointer;}
+	to   { -webkit-transform: rotate(360deg) translateY(200px) rotate(-360deg); cursor:pointer;}
+}
+@-moz-keyframes myOrbit4 {
+    from { -moz-transform: rotate(0deg) translateY(200px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateY(200px) rotate(-360deg); }
+}
+@-o-keyframes myOrbit4 {
+    from { -o-transform: rotate(0deg) translateY(200px) rotate(0deg); cursor:pointer; }
+    to   { -o-transform: rotate(360deg) translateY(200px) rotate(-360deg); cursor:pointer; }
+}
+@keyframes myOrbit4 {
+    from { transform: rotate(0deg) translateY(200px) rotate(0deg); cursor:pointer;}
+    to   { transform: rotate(360deg) translateY(200px) rotate(-360deg); cursor:pointer;}
+}
+/** ORBIT 5 **/
+@-webkit-keyframes myOrbit5 {
+    from { -webkit-transform: rotate(0deg) translateX(270px) rotate(0deg); cursor:pointer;}
+	to   { -webkit-transform: rotate(360deg) translateX(270px) rotate(-360deg); cursor:pointer;}
+}
+@-moz-keyframes myOrbit5 {
+    from { -moz-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+}
+@-o-keyframes myOrbit5 {
+    from { -o-transform: rotate(0deg) translateX(270px) rotate(0deg); cursor:pointer; }
+    to   { -o-transform: rotate(360deg) translateX(270px) rotate(-360deg); cursor:pointer; }
+}
+@keyframes myOrbit5 {
+    from { transform: rotate(0deg) translateX(270px) rotate(0deg); cursor:pointer;}
+    to   { transform: rotate(360deg) translateX(270px) rotate(-360deg); cursor:pointer;}
+}
