@@ -1,6 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script src="galleria/galleria-1.2.9.min.js"></script>
+<style>
+    #galleria{ width: 1050px; height: 600px; background: #000 }
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>My Site</title>
 <link href="myCss.css" rel="stylesheet" type="text/css" />
@@ -17,7 +24,11 @@
 </head>
 
 <body>
-
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.google.com%2F&amp;width=450&amp;height=21&amp;colorscheme=dark&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px; position:absolute; left:0%; top:50%;" allowTransparency="true"></iframe>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div style="position:absolute; left:0%; top:55%;">
+			<div class="g-plusone" data-size="medium" data-href="https://www.google.com/" ></div>
+        </div>
 
 <canvas id="canvas"></canvas>
 <!-- Play Sound --->
@@ -71,7 +82,7 @@
       <a href="http://www.cns.utexas.edu/about/departments/computer-science" class="TextHome" style="height:30px; width:275px; margin-top:-66px; margin-left:-85px; font-size:25px; color:#FF6600">The University of Texas</a>
 	  <span class="TextHome" style="height:30px; width:115px; margin-top:-35px; font-size:25px;">I work at </span>
   <a href="https://www.klink.com/" class="TextHome" style="height:30px; width:130px; margin-left:-87px; margin-top:-35px; font-size:25px; color:#009900">Klink (ATX)</a>
-  
+		
 </div>
 
 
@@ -121,12 +132,12 @@
     <!---Youtube Widget-->    
     <!----needes to start hidden and animate in on click to top:50 --->
 	<div id="widget_videos" style="position:absolute; top:-100%; left:389px">
-		<iframe id="videos_iframe" width="853" height="480" src="" frameborder="0" allowfullscreen style="border:solid #0099CC 0px;"></iframe>
+		<iframe id="videos_iframe" width="853" height="480" src="" frameborder="0" allowfullscreen style="border:solid #0099CC 0px; border-top-color:#637698; border-right-color:#637698;"></iframe>
 	</div>
 
      
 	<!--Songs Widget (Change src(let's use jquery!) to display widget)-->
-	<div id="widget_songs" style="position: absolute; width: 380px; height: 320px; margin: 0; padding: 0; border: solid #0099CC 0px; z-index=3; top: -100%; left: 355px; display: block;">
+	<div id="widget_songs" style="position: absolute; width: 380px; height: 320px; margin: 0; padding: 0; border: solid #0099CC 0px; border-top-color:#637698; border-right-color:#637698; z-index=3; top: -100%; left: 355px; display: block;">
 		<iframe class="widget_iframe" id="songs_iframe" src="" width="100%" height="100%" frameborder="0" scrolling="no" style="display:inherit;">
     	</iframe>
    		<div class="footer_branding" id="songs_iframe" style="margin-top:-5px;font-size:10px;font-family:Arial;display:inherit;">	
@@ -144,24 +155,24 @@
         
      ------------------------------------------------------------------------->
      
-<div id="Projects" >
-
-	<!--<ul id="projectList" style="position:absolute">
-		<li><img src="file:///C|/Users/JG/Pictures/gameProject.PNG" width="1919" height="899" /></li>
-        <li><img src="file:///C|/Users/JG/Pictures/guitarProject.PNG" width="1919" height="899" /></li>
-    </ul>-->
+<div id="Projects" style="position:absolute; top:100%; left:0%; width:100%; height:100%; margin-top:-275px;">
+	<div id="galleria" style="position:absolute; top:50%; left:50%; margin-left:-525px;">
+		<img src="Projects/temp-proj-info.jpg"/>
+        <img src="file:///C|/Users/JG/Pictures/guitarProject.PNG"/>
+	</div>
 </div> 
-
+<script>
+            Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+            Galleria.run('#galleria');
+</script>
 </body>
 </html>
-	<!----
+	<!-----------------------------------------------------
 		Scripts / Functions
-    					--->
+    	-------------------------------------------------------------------------------------------->
                         
-     <!---- EASING ---->
                    
-<script src="myjquery.js">
-</script>
+<script src="myjquery.js"></script>
 <script src="jqueryTextEffect.js"></script>
 <script src="cycle.js"></script>
 <script src="jquery.timers-1.2.js"></script>
@@ -170,6 +181,7 @@
 var homeVisible = true;
 var musicVisible = false;
 var contactVisible = false;
+var projectsVisible = false;
 var menuColor = "#F00";
 var defaultColor = "#AAE3FF";
 $(document).ready(function(){
@@ -248,6 +260,9 @@ $(document).ready(function(){
 	  else if(musicVisible) {
 		  MusicHide();
 		  }
+	else if(projectsVisible) {
+		 ProjectsHide();
+	 }
       if(!homeVisible){
 		  menuColor = "#F00";
 	      $("#HomeIconId").css("background-color",menuColor);
@@ -264,6 +279,9 @@ $(document).ready(function(){
 	 else if (musicVisible){ 
 	 	MusicHide();
 		}
+	else if(projectsVisible) {
+		 ProjectsHide();
+	 }
 	 if (contactVisible) 
 	 {
 		 menuColor="#F00";
@@ -288,6 +306,9 @@ $(document).ready(function(){
 	  else if (contactVisible) {
 		  ContactHide();
 		  }
+	 else if(projectsVisible) {
+		 ProjectsHide();
+	 }
 	 if(musicVisible) {
 		 menuColor="#F00";
 	     $("#MusicIconId").css("background-color",menuColor);
@@ -305,16 +326,31 @@ $(document).ready(function(){
 		 MusicShow();
 	 }
   });
-	var projectsVisible = false;
+	
 	$("#ProjectsIconId").click(function() {
+		if(homeVisible) {
+		 	 HomeHide();}
+	 	 else if (contactVisible) {
+		 	 ContactHide();
+		  }
+		 else if(musicVisible) {
+		 	MusicHide();
+		 }
 		if(!projectsVisible) {
 			menuColor="#CF5300";
-			projectsVisible = true;
+			$("#ProjectsIconId").css("background-color",menuColor);
+	        $("#ProjectsText").css("background-color", menuColor);
+	        $("#MainMenu").css("border-bottom-color", menuColor);
+	        $("#BottomPanel").css("border-top-color", menuColor);
+			ProjectsShow();
 		}
 		else {
-			/**We will have to close any widgets we leave open here!!!*/
 			menuColor="#F00";
-			projectsVisible = false;
+	     	$("#ProjectsIconId").css("background-color",menuColor);
+	    	$("#ProjectsText").css("background-color", menuColor);
+	    	$("#MainMenu").css("border-bottom-color", menuColor);
+	     	$("#BottomPanel").css("border-top-color", menuColor);
+			ProjectsHide();
 		}
   	});
 	/**************************************************
@@ -338,14 +374,14 @@ $(document).ready(function(){
 	var onSongs = false;
 	var onVideos = false;
 	$("#VideoActivator").hover(function() {
-			$("#VideoSelect").animate({opacity:100})
+			$("#VideoSelect").animate({opacity:100},{queue:false})
 		}, function() {
-			$("#VideoSelect").animate({opacity:0})
+			$("#VideoSelect").animate({opacity:0},{queue:false})
 	});
 	$("#MusicActivator").hover(function() {
-			$("#MusicSelect").animate({opacity:100})
+			$("#MusicSelect").animate({opacity:100},{queue:false})
 		}, function() {
-			$("#MusicSelect").animate({opacity:0})
+			$("#MusicSelect").animate({opacity:0},{queue:false})
 	});
 	$("#VideoActivator").click(function() {
 		if (!onVideos) {
@@ -521,23 +557,16 @@ function MusicHide() {
 		   $("#Music").animate({top:'-100%'});
 		   musicVisible=false;
 }
+function ProjectsShow() {
+			$("#Projects").animate({top:'0%'});
+			projectsVisible = true;
+}
+function ProjectsHide() {	
+			$("#Projects").animate({top:'100%'});
+			projectsVisible = false;
+}
 </script> 
 <script src="jqueryCirculate.js"></script>
-<script>
-
-	/**************************/
-	/** For Planets, Contacts */
-	/**************************/
-  /** $("#FacebookPlanet").circulate({
-    speed: 1900,                  // Speed of each quarter segment of 			animation, 1000 = 1 second
-    height: 175,                 // Distance vertically to travel
-    width: 400,                  // Distance horizontally to travel
-    sizeAdjustment: 120,         // Percentage to grow or shrink
-    loop: true,                 // Circulate continuously
-    zIndexValues: [1, 1, 1, 1]   // Sets z-index value at each stop of animation
-
-});*/
-</script>
 <script src="myCavas.js"></script>
 <script>
       var canvas = document.getElementById('ContactCanvas');
@@ -547,4 +576,4 @@ function MusicHide() {
         context.drawImage(imageObj, 0, 0);
       };
       imageObj.src = 'Contact/space.jpg';
- </script>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ </script>>>
