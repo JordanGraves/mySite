@@ -349,6 +349,13 @@ $(document).ready(function(){
 	});
 	$("#VideoActivator").click(function() {
 		if (!onVideos) {
+			if(onSongs) 
+			{
+				onSongs=false;
+				$("#widget_songs").animate({top:'-100%'});
+				$("#songs_iframe").removeAttr("src");
+				$("#widget_songs").css("border-width" ,"0px");	
+			}
 			onVideos = true;
 			$("#widget_videos").animate({top:'50px'});
 			$("#videos_iframe").attr("src", "http://www.youtube.com/embed/videoseries?list=PLOWQlPinZZKSLkyK_rp-hudVliKyCjj9P");
@@ -364,6 +371,12 @@ $(document).ready(function(){
 	});
 	$("#MusicActivator").click(function() {
 		if (!onSongs) {
+			if(onVideos){
+				onVideos=false;
+				$("#widget_videos").animate({top:'-100%'});
+				$("#videos_iframe").removeAttr("src");
+				$("#videos_iframe").css("border-width" ,"0px");		
+			}
 			onSongs = true;
 			$("#widget_songs").animate({top:'120px'});
 			$("#songs_iframe").attr("src", "http://www.reverbnation.com/widget_code/html_widget/artist_3310014?widget_id=50&posted_by=artist_3310014&pwc[design]=customized&pwc[background_color]=%23333333&pwc[included_songs]=1&pwc[photo]=0%2C1&pwc[size]=custom");
@@ -534,4 +547,4 @@ function MusicHide() {
         context.drawImage(imageObj, 0, 0);
       };
       imageObj.src = 'Contact/space.jpg';
- </script>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ </script>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
