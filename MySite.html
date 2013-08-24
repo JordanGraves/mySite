@@ -29,7 +29,7 @@
         
    	------------------------------------------------------>
     
-<div id="MainMenu" class="MainMenuClass" style=" border-bottom:#CCC solid 7px; background-color:#000;"> 
+<div id="MainMenu" class="MainMenuClass" style=" border-bottom:#F00 solid 7px; background-color:#000;"> 
   	<!----Icons---->
 		<img id="HomeIconId" class="MainMenuIcon" src="Icons/HomeIcon.gif" width="100" height="100"/>
    		<img id="MusicIconId" class="MainMenuIcon" src="Icons/GuitarIcon.png" width="100" height="100"/>
@@ -46,7 +46,7 @@
     		Bottom Panel
            
     ---------------------------------------------->
-<div id="BottomPanel" style="position:absolute; border-top:#CCCCCC solid 7px; background-color:#000; top:100%; height:50px; z-index:11; left:0%; top:100%; width:100%; margin-top:-50px;" >
+<div id="BottomPanel" style="position:absolute; border-top:#F00 solid 7px; background-color:#000; top:100%; height:50px; z-index:11; left:0%; top:100%; width:100%; margin-top:-50px;" >
 	
 </div>
     
@@ -59,7 +59,9 @@
 <div id="Home" style="position:absolute; left:0%; top:100px; width:100%; height:100%;">
       <div id="img_show" style="position:relative; top:50%; margin-top:-300px; height:100px; width:100px; left:50%; margin-left:-301px;" >
 	  	<img src="Home/560803_10201111254155756_358168784_n.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
-      	<img src="Home/me1.jpg" width="100" height="100" style="position:absolute; display:none;"> </img>
+   	  	<img src="Home/me1.jpg" width="100" height="100" style="position:absolute; display:none;"> </img>
+        <img src="Home/me3.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
+        <img src="Home/me2.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
       </div>
       <span class="TextHome" style="height:100px; width:485px; margin-top:-300px; text-height:90px; font-size:90px;">Hello world!</span>
       <span class="TextHome" style="height:50px; width:350px; margin-top:-199px; font-size:40px;">My name is Jordan</span>
@@ -165,22 +167,26 @@
 <script src="jquery.timers-1.2.js"></script>
 <script src="jquery.galleryview-3.0-dev.js"></script>
 <script> 
+var homeVisible = true;
+var musicVisible = false;
+var contactVisible = false;
+var menuColor = "#F00";
+var defaultColor = "#AAE3FF";
 $(document).ready(function(){
 	/************************ 
 	
 	Main Menu Animation & Handling
 	 
 	********************************/	
-  var contactVisible = false;
-  var menuColor = "#F00";
+ 
   var p = 100%
   $("#MainMenu").mouseenter(function(){
-		$("#MainMenu").animate({height:'156px'});
+		$("#MainMenu").animate({height:'156px'},{queue:false});
 		$("#MainMenu").css("border-bottom-color", menuColor);
 		$("#BottomPanel").css("border-top-color", menuColor);
   });
   $("#MainMenu").mouseleave(function() {
-		$("#MainMenu").animate({height:'100px'});
+		 $("#MainMenu").animate({height:'100px'},{queue:false});
 		 $("#MainMenu").css("border-bottom-color", menuColor);
 		 $("#BottomPanel").css("border-top-color", menuColor);
  		 });
@@ -188,117 +194,117 @@ $(document).ready(function(){
   function(){
 	  		$("#HomeIconId").css("background-color",menuColor);
 			$("#HomeText").css("background-color",menuColor);
-			$("#HomeText").animate({height:'56px'});
+			$("#HomeText").animate({height:'56px'},{queue:false});
 		},
 		function() {
 			$("#HomeIconId").css("background-color","#CCC");
 			$("#HomeText").css("background-color","#CCC");
-			$("#HomeText").animate({height:'0px'});
+			$("#HomeText").animate({height:'0px'},{queue:false});
 		}
   );
   $("#MusicIconId").hover(
   		function(){
 	  		$("#MusicIconId").css("background-color",menuColor);
 			$("#MusicText").css("background-color",menuColor);
-			$("#MusicText").animate({height:'56px'});
+			$("#MusicText").animate({height:'56px'},{queue:false});
 		},
 		function() {
 			$("#MusicIconId").css("background-color","#CCC");
 			$("#MusicText").css("background-color","#CCC");
-			$("#MusicText").animate({height:'0px'});
+			$("#MusicText").animate({height:'0px'},{queue:false});
 		}
   );
   $("#ProjectsIconId").hover(
 	 	function(){
 	  		$("#ProjectsIconId").css("background-color",menuColor);
 			$("#ProjectsText").css("background-color",menuColor);
-			$("#ProjectsText").animate({height:'56px'});
+			$("#ProjectsText").animate({height:'56px'},{queue:false});
 		},
 		function() {
 			$("#ProjectsIconId").css("background-color","#CCC");
 			$("#ProjectsText").css("background-color","#CCC");
-			$("#ProjectsText").animate({height:'0px'});
+			$("#ProjectsText").animate({height:'0px'},{queue:false});
 		}
   );
   $("#ContactIconId").hover(
 		function(){
 	  		$("#ContactIconId").css("background-color",menuColor);
 			$("#ContactText").css("background-color",menuColor);
-			$("#ContactText").animate({height:'56px'});
+			$("#ContactText").animate({height:'56px'},{queue:false});
 		},
 		function() {
 			$("#ContactIconId").css("background-color","#CCC");
 			$("#ContactText").css("background-color","#CCC");
-			$("#ContactText").animate({height:'0px'});
+			$("#ContactText").animate({height:'0px'},{queue:false});
 		}
   );
   /**************
   		MAIN MENU CLICKING CODE / DIV state handler
 		****************************/
-  var homeVisible = true;
-	$("#HomeIconId").click(function() {
-		if(!homeVisible) {
-			menuColor="#CF5300";
-			$("#Home").animate({left:'0%'});
-			$("Home").css("width", "100%");
-			homeVisible = true;
+  $("#HomeIconId").click(function() {
+	  if(contactVisible) {
+		  ContactHide();
+		  }
+	  else if(musicVisible) {
+		  MusicHide();
+		  }
+      if(!homeVisible){
+		  menuColor = "#F00";
+	      $("#HomeIconId").css("background-color",menuColor);
+	      $("#HomeText").css("background-color", menuColor);
+	      $("#MainMenu").css("border-bottom-color", menuColor);
+	      $("#BottomPanel").css("border-top-color", menuColor);
+		  HomeShow();
+	  }
+  });
+  $("#ContactIconId").click( function() {
+  	 if(homeVisible) { 
+	 	HomeHide();
 		}
-		else {
-			menuColor="#F00";
-			$("#Home").animate({left:'-100%'});
-			$("Home").css("width", "0");
-			homeVisible = false;
+	 else if (musicVisible){ 
+	 	MusicHide();
 		}
-  	});
-  $("#ContactIconId").click(function() {
-	  		if(!contactVisible) {
-				$("#Contact").animate({left:'50%'});
-				$("#canvas").animate({left:'-100%'});
-				$("#Contact").animate({marginLeft:'-700px'});
-				menuColor = "#0066FF";
-				$("#ContactIconId").css("background-color",menuColor);
-				$("#ContactText").css("background-color", menuColor);
-				$("#MainMenu").css("border-bottom-color", menuColor);
-				$("#BottomPanel").css("border-top-color", menuColor);
-				contactVisible = true;
-			}
-			else {
-				$("#Contact").animate({left:'100%'});
-				$("#Contact").css("margin-left","0px");
-				//$("#Contact").animate({marginLeft:'0px'}, 'fast');
-				$("#canvas").animate({left:'0%'});
-				contactVisible = false;
-				menuColor= "#F00";
-				$("#ContactIconId").css("background-color",menuColor);
-				$("#ContactText").css("background-color", menuColor);
-				$("#MainMenu").css("border-bottom-color", menuColor);
-				$("#BottomPanel").css("border-top-color", menuColor);
-			}
-  		});
-	var musicVisible = false;
-	$("#MusicIconId").click(function() {
-		if(!musicVisible) {
-			$("#Music").animate({top:'50%', marginTop:'-250px'}, 3000,"easeOutBounce");
-			menuColor="#0099CC";
-			$("#MusicIconId").css("background-color",menuColor);
-			$("#MusicText").css("background-color", menuColor);
-			$("#MainMenu").css("border-bottom-color", menuColor);
-			$("#BottomPanel").css("border-top-color", menuColor);
-			musicVisible = true;
-		}
-		else {
-			/**We will have to close any widgets we leave open here....
-				ON SECOND THOUGHT...Why now leave them open and running?
-					Can still just shut them off later!!!*/
-			$("#Music").animate({top:'-100%'});
-			menuColor="#F00";
-			$("#MusicIconId").css("background-color",menuColor);
-			$("#MusicText").css("background-color", menuColor);
-			$("#MainMenu").css("border-bottom-color", menuColor);
-			$("#BottomPanel").css("border-top-color", menuColor);
-			musicVisible = false;
-		}
-  	});
+	 if (contactVisible) 
+	 {
+		 menuColor="#F00";
+	     $("#ContactIconId").css("background-color",menuColor);
+	     $("#ContactText").css("background-color", menuColor);
+	     $("#MainMenu").css("border-bottom-color", menuColor);
+	     $("#BottomPanel").css("border-top-color", menuColor);
+		 ContactHide();
+	 }
+	 else {
+		 menuColor = "#0066FF";
+	     $("#ContactIconId").css("background-color",menuColor);
+	     $("#ContactText").css("background-color", menuColor);
+	     $("#MainMenu").css("border-bottom-color", menuColor);
+	     $("#BottomPanel").css("border-top-color", menuColor);
+		 ContactShow();
+	 }
+  });
+  $("#MusicIconId").click( function() {
+	  if(homeVisible) {
+		  HomeHide();}
+	  else if (contactVisible) {
+		  ContactHide();
+		  }
+	 if(musicVisible) {
+		 menuColor="#F00";
+	     $("#MusicIconId").css("background-color",menuColor);
+	     $("#MusicText").css("background-color", menuColor);
+	     $("#MainMenu").css("border-bottom-color", menuColor);
+	     $("#BottomPanel").css("border-top-color", menuColor);
+		 MusicHide();
+	 }
+ 	 else {
+	     menuColor="#0099CC";
+	     $("#MusicIconId").css("background-color",menuColor);
+	     $("#MusicText").css("background-color", menuColor);
+	     $("#MainMenu").css("border-bottom-color", menuColor);
+	     $("#BottomPanel").css("border-top-color", menuColor);
+		 MusicShow();
+	 }
+  });
 	var projectsVisible = false;
 	$("#ProjectsIconId").click(function() {
 		if(!projectsVisible) {
@@ -325,7 +331,7 @@ $(document).ready(function(){
   	       .next('img').fadeIn()
  	        .end().appendTo('#img_show');}, 
 		      3000);
-});
+    });
 	/**********************************
 			MUSIC PAGE/DIV
 			*******************************/
@@ -462,9 +468,46 @@ $(document).ready(function(){
    		 show_filmstrip: false,
   	 	 panel_animation: 'slide',
  	 	  show_infobar: false
-});
+    });
 	
 });
+/************************************************
+
+		Menu Event Handlers
+
+***********************************************/
+function HomeShow() {
+	//		menuColor="#CF5300";
+			$("#Home").animate({left:'0%'});
+			$("Home").css("width", "100%");
+			homeVisible = true;
+}
+function HomeHide() {	
+			$("#Home").animate({left:'-100%'});
+			$("Home").css("width", "0");
+			homeVisible = false;
+}
+function ContactShow() {
+			$("#Contact").animate({left:'50%'});
+			$("#canvas").animate({left:'-100%'})
+			$("#Contact").animate({marginLeft:'-700px'});
+			contactVisible=true;
+		}
+function ContactHide(){
+			$("#Contact").animate({left:'100%'}, {complete:function() {$("#Contact").css("margin-left","0px");}});
+			//$("#Contact").animate({marginLeft:'0px'}, 'fast');
+			$("#canvas").animate({left:'0%'});
+			contactVisible=false;
+}
+var musicAnimating=true;
+function MusicShow() {
+	 		$("#Music").animate({top:'50%', marginTop:'-250px'},{easing:"easeOutSine",duration:1000});
+		    musicVisible=true;
+}
+function MusicHide() {
+		   $("#Music").animate({top:'-100%'});
+		   musicVisible=false;
+}
 </script> 
 <script src="jqueryCirculate.js"></script>
 <script>
@@ -491,4 +534,4 @@ $(document).ready(function(){
         context.drawImage(imageObj, 0, 0);
       };
       imageObj.src = 'Contact/space.jpg';
- </script>>>>>>>>>
+ </script>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
