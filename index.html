@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="shortcut icon" href="webicon.ico">
+
 <!-- Place this tag in your head or just before your close body tag. -->
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
@@ -9,26 +11,41 @@
     #galleria{ width: 1050px; height: 600px; background: #000 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>My Site</title>
+<title>Jordan Graves</title>
 <link href="myCss.css" rel="stylesheet" type="text/css" />
 
 <!--- Play Sound --->
 <script language="javascript" type="text/javascript">
- function playSound(soundfile) {
- document.getElementById("dummy").innerHTML=
- "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+		 function playSound(soundfile) {
+		 		document.getElementById("dummy").innerHTML=
+		 			"<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
  }
  </script>
- 
+ <!---------GOOGLE ANLYTICS-------->
+ <script>
+	  (function(i,s,o,g,r,a,m) {
+		 	i['GoogleAnalyticsObject']=r;
+			i[r]=i[r] || function() {
+	  							(i[r].q=i[r].q || []).push(arguments)
+						}
+						,i[r].l=1*new Date();
+						a=s.createElement(o)
+						,m=s.getElementsByTagName(o)[0];
+			a.async=1;
+			a.src=g;
+			m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-43420867-1', 'jordangraves.org');
+	  ga('send', 'pageview');
+
+</script>
  
 </head>
 
 <body>
-<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.google.com%2F&amp;width=450&amp;height=21&amp;colorscheme=dark&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px; position:absolute; left:0%; top:50%;" allowTransparency="true"></iframe>
-        <!-- Place this tag where you want the +1 button to render. -->
-        <div style="position:absolute; left:0%; top:55%;">
-			<div class="g-plusone" data-size="medium" data-href="https://www.google.com/" ></div>
-        </div>
+<a href="page.html"></a>
+        
 
 <canvas id="canvas"></canvas>
 <!-- Play Sound --->
@@ -52,36 +69,56 @@
      	<img id="ProjectsText" src="Icons/ProjectsText.png" style="position: absolute; left: 200px; top: 100px; width: 100px; height: 0px; background-color:#CCC;"/>
      	<img id="ContactText" src="Icons/ContactText.png" style="position: absolute; left: 300px; top: 100px; width: 100px; height: 0px; background-color:#CCC;"/>
 </div>
+	<!--------------
+    		FaceBook ang Google containers ... and now.....(drum roll)....Twitter!!!
+            	---------------------->
+                <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fjordangraves.org%2F&amp;width=450&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden;width:80px; height:21px; position:absolute; z-index:20; top:100%; margin-top:-72px; left:0%; margin-left:2px;"" allowTransparency="true"></iframe>
+                <!-- Place this tag where you want the +1 button to render. -->
+        <div style="position:absolute; left:0%; top:100%; margin-top:-72px; margin-left:90px; z-index:21;">
+			<div class="g-plusone" data-size="medium" data-href="http://jordangraves.org/"></div>
+        </div>
+        <div id="TwitterButton" style="position:absolute; left:0%; top:100%; margin-top:-72px; margin-left:165px; z-index:21;"> 
+        			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jordangraves.org" data-text="Check out this site &gt;&gt;" data-via="JordanGraves_">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        
+
+
 	<!-------------------------------------------
     
     		Bottom Panel
            
     ---------------------------------------------->
 <div id="BottomPanel" style="position:absolute; border-top:#F00 solid 7px; background-color:#000; top:100%; height:50px; z-index:11; left:0%; top:100%; width:100%; margin-top:-50px;" >
-	
+		<span style="position:absolute; color:#999; font-family:Verdana, Geneva, sans-serif; font-size:10px; top:50%;">&copy; Jordan Graves</span>
 </div>
     
     <!-----------------------------------------------------
     
     			HOME
                 
-                
       ---------------------------------------------->
 <div id="Home" style="position:absolute; left:0%; top:100px; width:100%; height:100%;">
+      
+       
+      <!-- Picture
       <div id="img_show" style="position:relative; top:50%; margin-top:-300px; height:100px; width:100px; left:50%; margin-left:-301px;" >
-	  	<img src="Home/560803_10201111254155756_358168784_n.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
-   	  	<img src="Home/me1.jpg" width="100" height="100" style="position:absolute; display:none;"> </img>
-        <img src="Home/me3.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
-        <img src="Home/me2.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
-      </div>
-      <span class="TextHome" style="height:100px; width:485px; margin-top:-300px; text-height:90px; font-size:90px;">Hello world!</span>
-      <span class="TextHome" style="height:50px; width:350px; margin-top:-199px; font-size:40px;">My name is Jordan</span>
-      <span class="TextHome" style="height:50px; width:500px; margin-top:-148px; font-size:40px;">Welcome to my playground</span>
-      <span class="TextHome" style="height:30px; width:420px; margin-top:-97px; font-size:25px;">I am a Computer Scientist / Musician</span>
-      <span class="TextHome" style="height:30px; width:120px; margin-top:-66px; font-size:25px;">I study at </span>
-      <a href="http://www.cns.utexas.edu/about/departments/computer-science" class="TextHome" style="height:30px; width:275px; margin-top:-66px; margin-left:-85px; font-size:25px; color:#FF6600">The University of Texas</a>
-	  <span class="TextHome" style="height:30px; width:115px; margin-top:-35px; font-size:25px;">I work at </span>
-  <a href="https://www.klink.com/" class="TextHome" style="height:30px; width:130px; margin-left:-87px; margin-top:-35px; font-size:25px; color:#009900">Klink (ATX)</a>
+	  		<img src="Home/560803_10201111254155756_358168784_n.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
+        
+   	  		<img src="Home/me1.jpg" width="100" height="100" style="position:absolute; display:none;"> </img>
+        	<img src="Home/mejamming.jpg" width="100" height="100" style="position:absolute; display:none;"></img> 
+        	<img src="Home/me3.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
+        
+        	<img src="Home/me2.jpg" width="100" height="100" style="position:absolute; display:none;"></img>
+      </div>-->
+          <img src="Home/me6.png" style="position:absolute;top:50%; margin-top:-300px; margin-left:-302px; height:100px; width:100px; left:50%;"> 		</img>
+          <span class="TextHome" style="top:50%; height:100px; width:485px; margin-top:-300px; text-height:90px; font-size:90px;left:50%;">Hello world!</span>
+          <span class="TextHome" style="left:50%;top:50%;height:50px; width:510px; margin-top:-199px; font-size:40px;">Welcome to Jordan Graves's</span>
+          <span class="TextHome" style="left:50%;top:50%;height:50px; width:350px; margin-top:-148px; font-size:40px;">Internet real estate</span>
+          <span class="TextHome" style="left:50%;top:50%;height:20px; width:265px; margin-top:-97px; font-size:15px;">Computer Scientist / Hobbyist Musician</span>
+          <a href="http://www.cns.utexas.edu/about/departments/computer-science" class="TextHome" style="left:50%;top:50%;height20px; width:105px; margin-top:-76px; font-size:15px; color:#FF6600; text-decoration:none">Where I study</a>
+	  
+ 	 <a href="https://www.klink.com/" class="TextHome" style="left:50%;top:50%;height:20px; width:100px;; margin-top:-57px; font-size:15px; color:#009900; text-decoration:none">Where I work</a>
 		
 </div>
 
@@ -92,28 +129,30 @@
         
        ----------------------------------------------------------------------->
        
-<div id="Contact" class="page" style="left: 200%; top: 100px;">
+<div id="Contact">
 	<!--<canvas id="ContactCanvas"></canvas>
 					<!--- BACKROUND--->
-    <img id="ContactBackground" src="Contact/space.jpg" /> 
-	<img id="MainPlanet" src="Contact/.gif" width="60" height="60"/>
+    	<img id="ContactBackground" src="Contact/space.jpg" /> 
+		<img id="MainPlanet" src="Contact/sun.gif" width="60" height="60"/>
    			<!---Planet Text --->
                     <!---this will hold the planet info--->
-<dl id="PlanetDesription" style="position:absolute; top:0%; left:50%; margin-left:-100px;">
- 	<dt id="PlanetText" style="color:#CCC; font-family:Xolonium; font-size:36px; text-align:left;"></dt>
-    <dt id="PlanetPop" style="color:#CCC; font-family:Xolonium; font-size:18px; text-align:left;"></dt>
-  	<dt id="PlanetBirth" style="color:#CCC; font-family:Xolonium; font-size:18px; text-align:left;"></dt>  
-  </dl>
+		<dl id="PlanetDesription" style="position:absolute; top:0%; left:50%; margin-left:-100px; margin-top:100px;">
+ 				<dt id="PlanetText" style="color:#CCC; font-family:Tahoma, Geneva, sans-serif; font-size:36px; text-align:left;"></dt>
+                <dt id="Sector" style="color:#CCC; font-family:Tahoma, Geneva, sans-serif; font-size:18px; text-align:left;"></dt> 
+   				<dt id="PlanetPop" style="color:#CCC; font-family:Tahoma, Geneva, sans-serif; font-size:18px; text-align:left;"></dt>
+  				<dt id="PlanetBirth" style="color:#CCC; font-family:Tahoma, Geneva, sans-serif; font-size:18px; text-align:left;"></dt>  
+                 
+ 		</dl>
   					<!--FaceBook Planet --->
- 	<img id="FacebookPlanet" onclick="document.location='https://www.facebook.com/jordan.graves.946';return false;" src="Contact/facebookOrb.gif" width="30" height="30"/>
+ 		<img id="FacebookPlanet" onclick="document.location='https://www.facebook.com/jordan.graves.946';return false;" src="Contact/facebookOrb.gif" width="30" height="30"/>
     				<!--ReverbNation Planet --->
-    <img id="ReverbNationPlanet" onclick="document.location='http://www.reverbnation.com/jordanlgraves';return false;" src="Contact/ReverbNationOrb.png" width="30" height="30" />
+  	 	<img id="ReverbNationPlanet" onclick="document.location='http://www.reverbnation.com/jordanlgraves';return false;" src="Contact/ReverbNationOrb.png" width="30" height="30" />
     				<!-- Google Planet ---->
-	<img id="GooglePlanet" onclick="document.location='https://plus.google.com/112472094036063449783';return false;" src="Contact/googleOrb.gif" width="40" height="40" />
-<!--- Linked In Planet -->
-    <img id="LinkedInPlanet" src="Contact/linkedInOrb.gif" onclick="document.location='http://www.linkedin.com/profile/view?id=252915762';return false;" src="Contact/linkedInOrb.gif" width="35" height="35"  />
+		<img id="GooglePlanet" onclick="document.location='https://plus.google.com/112472094036063449783';return false;" src="Contact/googleOrb.gif" width="40" height="40" />
+			<!--- Linked In Planet -->
+    	<img id="LinkedInPlanet" src="Contact/linkedInOrb.gif" onclick="document.location='http://www.linkedin.com/profile/view?id=252915762';return false;" src="Contact/linkedInOrb.gif" width="35" height="35"  />
     				<!--- Github Planet -->
-    <img id="GithubPlanet" src="Contact/githubOrb.png" onclick="document.location='https://github.com/JordanGraves';return false;" width="40" height="40" />
+    	<img id="GithubPlanet" src="Contact/githubOrb.png" onclick="document.location='https://github.com/JordanGraves';return false;" width="40" height="40" />
 </div>
 
 	<!------------------------------------------------------
@@ -122,31 +161,32 @@
         
        --------------------------------------------------------->
                 
-<div id="Music" class="page" style="top:-100%; left:'100%';">
-	 <img id="Guitar" src="Music/Guitar.gif" width="1280" height="512" onclick="playSound('Sounds/E_vbr.mp3');"/> 
- 	 <img id="VideoSelect" src="Music/Buttons/ButtonSelect.png" />   
- 	 <img id="VideoActivator" src="Music/Buttons/ButtonActivator.png" />  
- 	 <img id="MusicSelect" src="Music/Buttons/ButtonSelect.png" />   
-  	 <img id="MusicActivator" src="Music/Buttons/ButtonActivator.png" />  
+<div id="Music" style="top:-100%; left:'100%';">
+	 	<span id="MusicControlPanel" style="position:absolute; top:50%; left:0%; font-family:Verdana, Geneva, sans-serif; color:#CCCCCC; margin-left:110px; margin-top:50px; font-size:20px;z-index:3;">Control Panel</span>
+	 	<img id="Guitar" src="Music/Guitar.gif" width="1280" height="512" onclick="playSound('Sounds/E_vbr.mp3');"/> 
+ 	 	<img id="VideoSelect" src="Music/Buttons/ButtonSelect.png" />   
+ 	 	<img id="VideoActivator" src="Music/Buttons/ButtonActivator.png" />  
+ 	 	<img id="MusicSelect" src="Music/Buttons/ButtonSelect.png" />   
+  	 	<img id="MusicActivator" src="Music/Buttons/ButtonActivator.png" />  
      
-    <!---Youtube Widget-->    
-    <!----needes to start hidden and animate in on click to top:50 --->
-	<div id="widget_videos" style="position:absolute; top:-100%; left:389px">
-		<iframe id="videos_iframe" width="853" height="480" src="" frameborder="0" allowfullscreen style="border:solid #0099CC 0px; border-top-color:#637698; border-right-color:#637698;"></iframe>
-	</div>
-
-     
-	<!--Songs Widget (Change src(let's use jquery!) to display widget)-->
-	<div id="widget_songs" style="position: absolute; width: 380px; height: 320px; margin: 0; padding: 0; border: solid #0099CC 0px; border-top-color:#637698; border-right-color:#637698; z-index=3; top: -100%; left: 355px; display: block;">
-		<iframe class="widget_iframe" id="songs_iframe" src="" width="100%" height="100%" frameborder="0" scrolling="no" style="display:inherit;">
-    	</iframe>
-   		<div class="footer_branding" id="songs_iframe" style="margin-top:-5px;font-size:10px;font-family:Arial;display:inherit;">	
-    		<center>
-        	<a href="http://www.reverbnation.com/band-promotion/how-to-sell-music-on-itunes?utm_campaign=a_features_distribution&utm_medium=widget&utm_source=HTML5_Player&utm_content=widgetfooter_Learn how to put a song on itunes at ReverbNation.com" target="_blank" style="text-decoration:none;color:#444;display:inherit;">
-            </a>
-        	</center>
-    	</div>
-	</div>
+        <!---Youtube Widget-->    
+        <!----needes to start hidden and animate in on click to top:50 --->
+        <div id="widget_videos" style="position:absolute; top:-100%; left:389px; margin-top:-200px;">
+            	<iframe id="videos_iframe" width="853" height="480" src="" frameborder="0" allowfullscreen style="border:solid #0099CC 0px; border-top-color:#637698; border-right-color:#637698;"></iframe>
+        </div>
+    
+         
+        <!--Songs Widget (Change src(let's use jquery!) to display widget)-->
+        <div id="widget_songs" style="position: absolute; width: 380px; height: 320px; margin: 0; padding: 0; border: solid #0099CC 0px; border-top-color:#637698; border-right-color:#637698; z-index=3; top: -100%; left: 355px; display: block; margin-top:-150px;">
+            	<iframe class="widget_iframe" id="songs_iframe" src="" width="100%" height="100%" frameborder="0" scrolling="no" style="display:inherit;">
+            	</iframe>
+            	<div class="footer_branding" id="songs_iframe" style="margin-top:-5px;font-size:10px;font-family:Arial;display:inherit;">	
+               			<center>
+                				<a href="http://www.reverbnation.com/band-promotion/how-to-sell-music-on-itunes?utm_campaign=a_features_distribution&utm_medium=widget&utm_source=HTML5_Player&utm_content=widgetfooter_Learn how to put a song on itunes at ReverbNation.com" target="_blank" style="text-decoration:none;color:#444;display:inherit;">
+                				</a>
+                		</center>
+           		</div>
+        </div>
 </div>
 
 	<!----------------------------------------------------------------------- 
@@ -155,20 +195,33 @@
         
      ------------------------------------------------------------------------->
      
-<div id="Projects" style="position:absolute; top:100%; left:0%; width:100%; height:100%; margin-top:-275px;">
-	<div id="galleria" style="position:absolute; top:50%; left:50%; margin-left:-525px;">
-		<img src="Projects/temp-proj-info.jpg"/>
-        <img src="file:///C|/Users/JG/Pictures/guitarProject.PNG"/>
-	</div>
+<div id="Projects" style="position:absolute; top:100%; left:0%; width:100%; height:100%; overflow:hidden;">
+		<div id="galleria" style="position:absolute; top:50%; left:50%; margin-left:-525px; margin-top:-275px">
+				<img src="Projects/temp-proj-info.jpg"/>
+        		<img src="Projects/guitarProject.jpg"/>
+		</div>
 </div> 
 <script>
             Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
             Galleria.run('#galleria');
 </script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 	<!-----------------------------------------------------
-		Scripts / Functions
+		Functions
     	-------------------------------------------------------------------------------------------->
                         
                    
@@ -177,13 +230,27 @@
 <script src="cycle.js"></script>
 <script src="jquery.timers-1.2.js"></script>
 <script src="jquery.galleryview-3.0-dev.js"></script>
+<script type="text/javascript">
+if(window.addEventListener){
+    window.addEventListener('DOMMouseScroll',wheel,false);
+}
+
+function wheel(event)
+{
+    event.preventDefault();
+    event.returnValue=false;
+}
+window.onmousewheel=document.onmousewheel=wheel;
+</script>
 <script> 
+
 var homeVisible = true;
 var musicVisible = false;
 var contactVisible = false;
 var projectsVisible = false;
 var menuColor = "#F00";
 var defaultColor = "#AAE3FF";
+
 $(document).ready(function(){
 	/************************ 
 	
@@ -361,7 +428,6 @@ $(document).ready(function(){
 	
 
 	$(function(){
-    	$('#img_show img:gt(0)').hide();
     	setInterval(function(){
   	    $('#img_show :first-child').fadeOut()
   	       .next('img').fadeIn()
@@ -393,7 +459,7 @@ $(document).ready(function(){
 				$("#widget_songs").css("border-width" ,"0px");	
 			}
 			onVideos = true;
-			$("#widget_videos").animate({top:'50px'});
+			$("#widget_videos").animate({top:'50%'});
 			$("#videos_iframe").attr("src", "http://www.youtube.com/embed/videoseries?list=PLOWQlPinZZKSLkyK_rp-hudVliKyCjj9P");
 			$("#videos_iframe").animate({borderWidth:'7px'});
 		}
@@ -414,7 +480,7 @@ $(document).ready(function(){
 				$("#videos_iframe").css("border-width" ,"0px");		
 			}
 			onSongs = true;
-			$("#widget_songs").animate({top:'120px'});
+			$("#widget_songs").animate({top:'50%'});
 			$("#songs_iframe").attr("src", "http://www.reverbnation.com/widget_code/html_widget/artist_3310014?widget_id=50&posted_by=artist_3310014&pwc[design]=customized&pwc[background_color]=%23333333&pwc[included_songs]=1&pwc[photo]=0%2C1&pwc[size]=custom");
 			$("#widget_songs").css("border-width" ,"7px");
 		}
@@ -435,6 +501,7 @@ $(document).ready(function(){
 	$("#FacebookPlanet").mouseenter(function(){
 		$("#PlanetText").text("Facebook");
 		$("#PlanetPop").text("Population: >2,000,000,000");
+		$("#Sector").text("Sector: Social");
 		var faceBookDate = new Date(2004,2,4,0,0,0,0);
 		var diff = date.getTime() - faceBookDate.getTime();
 		var days = diff / 86400000;
@@ -445,6 +512,7 @@ $(document).ready(function(){
 		$("#PlanetText").textEffect();
 		$("#PlanetPop").textEffect();
 		$("#PlanetBirth").textEffect();
+		$("#Sector").textEffect();
 	});
 	$("#FacebookPlanet").mouseout(function(){
 	});
@@ -454,7 +522,7 @@ $(document).ready(function(){
 	$("#ReverbNationPlanet").mouseenter(function() {
 		$("#PlanetText").text("Reverb Nation");
 		$("#PlanetPop").text("Population: >500,000");
-		$("#PlanetText").text("Reverb Nation");
+		$("#Sector").text("Sector: Recreational");
 		var rnDate = new Date(2006,10,31,0,0,0,0);
 		var diff = date.getTime() - rnDate.getTime();
 		var days = diff / 86400000;
@@ -465,12 +533,14 @@ $(document).ready(function(){
 		$("#PlanetText").textEffect();
 		$("#PlanetPop").textEffect();
 		$("#PlanetBirth").textEffect();
+		$("#Sector").textEffect();
 	});
 	$("#ReverbNationPlanet").mouseout(function() {
 	});
 	$("#GooglePlanet").mouseenter(function() {
 		$("#PlanetText").text("Google+");
 		$("#PlanetPop").text("Population: >360,000,000");
+		$("#Sector").text("Sector: Social/Business");
 		var googleDate = new Date(2011,6,25,0,0,0,0);
 		var diff = date.getTime() - googleDate.getTime();
 		var days = diff / 86400000;
@@ -478,12 +548,14 @@ $(document).ready(function(){
 		$("#PlanetText").textEffect();
 		$("#PlanetPop").textEffect();
 		$("#PlanetBirth").textEffect();
+		$("#Sector").textEffect();
 	});
 	$("#GooglePlanet").mouseout(function() {
 	});
 	$("#LinkedInPlanet").mouseenter(function() {
 		$("#PlanetText").text("LinkedIn");
 		$("#PlanetPop").text("Population: >225,000,000");
+		$("#Sector").text("Sector: Business");
 		var googleDate = new Date(2003,5,5,0,0,0,0);
 		var diff = date.getTime() - googleDate.getTime();
 		var days = diff / 86400000;
@@ -491,10 +563,12 @@ $(document).ready(function(){
 		$("#PlanetText").textEffect();
 		$("#PlanetPop").textEffect();
 		$("#PlanetBirth").textEffect();
+		$("#Sector").textEffect();
 	});
 	$("#GithubPlanet").mouseenter(function() {
 		$("#PlanetText").text("Github");
 		$("#PlanetPop").text("Population: >3,500,000");
+		$("#Sector").text("Sector: Business/Recreational");
 		var githubDate = new Date(2008,4,10,0,0,0,0);
 		var diff = date.getTime() - githubDate.getTime();
 		var days = diff / 86400000;
@@ -502,6 +576,7 @@ $(document).ready(function(){
 		$("#PlanetText").textEffect();
 		$("#PlanetPop").textEffect();
 		$("#PlanetBirth").textEffect();
+		$("#Sector").textEffect();
 	});
 	
 	
@@ -509,14 +584,14 @@ $(document).ready(function(){
 	
 	/*******************
 		
-		Some nasty Project page code
+		Projects PAge
 	
 	*******************/
 	$('projectList').galleryView({
    		 transition_speed: 600,
    		 show_filmstrip: false,
   	 	 panel_animation: 'slide',
- 	 	  show_infobar: false
+ 	 	 show_infobar: false
     });
 	
 });
@@ -537,9 +612,11 @@ function HomeHide() {
 			homeVisible = false;
 }
 function ContactShow() {
-			$("#Contact").animate({left:'50%'});
+			$("#Contact").animate({left:'0%'});
+			$("#ContactBackground").animate({left:'50%'});
 			$("#canvas").animate({left:'-100%'})
-			$("#Contact").animate({marginLeft:'-700px'});
+			//$("#Contact").animate({marginLeft:'-700px'});
+			
 			contactVisible=true;
 		}
 function ContactHide(){
@@ -550,11 +627,13 @@ function ContactHide(){
 }
 var musicAnimating=true;
 function MusicShow() {
-	 		$("#Music").animate({top:'50%', marginTop:'-250px'},{easing:"easeOutSine",duration:1000});
+	 		$("#Music").animate({top:'0%'},{easing:"easeOutSine",duration:1000});
+			$("#Guitar").animate({top:'50%'},{easing:"easeOutSine",duration:1000});
 		    musicVisible=true;
 }
 function MusicHide() {
 		   $("#Music").animate({top:'-100%'});
+		   $("#Guitar").animate({top:'-100%'});
 		   musicVisible=false;
 }
 function ProjectsShow() {
@@ -576,4 +655,5 @@ function ProjectsHide() {
         context.drawImage(imageObj, 0, 0);
       };
       imageObj.src = 'Contact/space.jpg';
- </script>>>
+ </script>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -11,12 +11,16 @@ window.onload = function(){
 	canvas.width = W;
 	canvas.height = H;
 	
-	//snowflake particles
+	// @ var mp - the maximum number pf musical particals/notes 
+	// @ var mb - the maximum number of binary particles, if you change this be sure to add another string in the binaries array to match the number
+	// @ particles - array to hold mucical note info
+	// @ binaries - array to hold binary strings info
 	var mp = 10; //max particles
 	var particles = [];
 	var mb = 10;
 	var binaries = [];
-	var strings = ["0001 1100 1001 1101", "1111 0000", "10011000110010", "0001 0001 1110 1001", "Hello World!", "1110 0011", "1001 1001 1011", "01001001001 1010 1011 1011", "110100 1000 1110", "1101 1101 1011"];
+	var strings = ["0001 1100 1001 1101", "1111 0000", "10011000 11001010", "0001 0001 1110 1001", "Hello World!", "1110 0011", "1001 1001 1011", "0100 1000 1001 1010 1011 1011", "01 1000 1110", "1101 1101 1011"];
+	/* Setting up and intalizing the values for the musical notes and binary string */
 	for(var i = 0; i < mp; i++)
 	{
 		particles.push({
@@ -38,7 +42,8 @@ window.onload = function(){
 			s: strings[i]
 		})
 	}
-	//Lets draw the flakes
+	//Lets draw these bad boys
+	// Use a oval for the bottom portion and a simple block for the stem
 	function draw()
 	{
 		 ctx.clearRect(0, 0, W, H);
@@ -55,9 +60,8 @@ window.onload = function(){
 			ctx.moveTo(p.x, p.y);
 			ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
 			ctx.moveTo(p.x + p.r, p.y);
-			
 			//ctx.lineTo(p.x+p.r , p.y - p.r* 7);
-	       ctx.fillRect(p.x +p.r-p.r*.4, p.y - p.r*7 , p.r*.5 , p.r*7); 
+	        ctx.fillRect(p.x +p.r-p.r*.4, p.y - p.r*7 , p.r*.5 , p.r*7); 
 			//ctx.stroke();	
 			ctx.restore();
 			ctx.moveTo(b.x,b.y);
@@ -68,8 +72,8 @@ window.onload = function(){
 		update();
 	}
 	
-	//Function to move the snowflakes
-	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
+	//Function to move the particles around
+	// angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the particles
 	var angle = 0;
 	function update()
 	{
